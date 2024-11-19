@@ -2,6 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const session = require('express-session')
 const customer_routes = require('./router/auth_users.js').authenticated;
+const isValid = require("./router/auth_users.js").isValid;
 const genl_routes = require('./router/general.js').general;
 
 const app = express();
@@ -17,11 +18,12 @@ app.use("/customer",
 )
 
 app.use("/customer/auth/*", function auth(req, res, next) {
-    const { username, password } = req.body
+    const { username } = req.body
 
-    if (username === 'customer' && password === '123456') {
-        req.session.user = req.user;
-        res.send('Authenticated');
+    if (isValid(username)) {
+        req.session.user = username;
+
+        next()
     } else {
         res.send('Authentication failed');
     }
