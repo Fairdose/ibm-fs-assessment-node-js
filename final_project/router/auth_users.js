@@ -88,7 +88,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
             }
 
             if (Object.hasOwn(books, isbn)) {
-                books[isbn].reviews[user.username] = review
+                delete books[isbn].reviews[user.username]
 
                 res.json({
                     messages: "Review deleted successfully",
