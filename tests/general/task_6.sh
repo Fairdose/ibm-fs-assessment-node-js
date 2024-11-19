@@ -6,8 +6,6 @@ echo 'Test: No username or password provided'
 
 echo 'Command: curl -X POST "http://localhost:5001/register" | jq -r'
 
-echo "Body:"
-
 echo "Output: "
 
 curl -X POST "http://localhost:5001/register" | jq -r
