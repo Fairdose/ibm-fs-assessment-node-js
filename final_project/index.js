@@ -20,7 +20,7 @@ app.use("/customer",
 app.use("/customer/auth/*", function auth(req, res, next) {
     const { username } = req.body
 
-    if (isValid(username)) {
+    if (isValid(username) || req.session.user) {
         req.session.user = username;
 
         next()
