@@ -45,8 +45,6 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
 
     if (token) {
         jwt.verify(token, secretKey, (err, user) => {
-            console.log(user)
-
             if (err) {
                 res.status(500).json({ message: "Authorization failed" });
 
