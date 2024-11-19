@@ -1,3 +1,5 @@
 # Distribution / packaging
 node_modules
 .idea
+
+.jwt

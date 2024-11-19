@@ -19,7 +19,7 @@ app.use("/customer",
 app.use("/customer/auth/*", function auth(req, res, next) {
     const { username, password } = req.body
 
-    if (username === 'admin' && password === '123456') {
+    if (username === 'customer' && password === '123456') {
         req.session.user = req.user;
         res.send('Authenticated');
     } else {
