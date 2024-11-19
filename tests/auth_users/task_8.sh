@@ -2,7 +2,7 @@
 
 clear
 
-DATA='{ "username": "token_user", "password": "token_password", "review": "If you enjoyed it give Der Löwe von Uruk a chance too." }'
+DATA='{ "username": "token_user", "review": "If you enjoyed it give Der Löwe von Uruk a chance too." }'
 CONTENT_TYPE="Content-Type: application/json"
 AUTH="Authorization: $(cat ../authentication/.jwt)"
 
